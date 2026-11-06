@@ -1,0 +1,10 @@
+/* CSS for LoginLayout component */
+.pagina-login[b-s832tb3luz] {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-login[b-s832tb3luz] {
+    flex: 1;
+}

@@ -1,0 +1,113 @@
+.footer-principal[b-ol14b9w6ip] {
+    margin-top: auto;
+    padding: 16px 24px;
+    border-top: 1px solid var(--cinza-borda);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--cinza-texto);
+}
+
+.dev-label[b-ol14b9w6ip] {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+/* as duas colunas, juntinhas no meio */
+.info-geral[b-ol14b9w6ip] {
+    width: fit-content;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* coluna esquerda */
+.container-tec-usadas[b-ol14b9w6ip] {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label-tec-usadas[b-ol14b9w6ip] {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.container-eco-microsoft[b-ol14b9w6ip],
+.container-html-css[b-ol14b9w6ip] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-html-css[b-ol14b9w6ip] {
+    padding-top: 8px;
+    border-top: 1px solid var(--cinza-borda);
+}
+
+
+.container-icones[b-ol14b9w6ip] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.container-github[b-ol14b9w6ip],
+.container-linkedin[b-ol14b9w6ip] {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .container-github label[b-ol14b9w6ip],
+    .container-linkedin label[b-ol14b9w6ip] {
+        font-weight: 600;
+        color: var(--texto);
+        cursor: pointer;
+    }
+
+.footer-principal a[b-ol14b9w6ip] {
+    color: var(--texto);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .footer-principal a:hover[b-ol14b9w6ip] {
+        color: var(--vermelho);
+    }
+
+.link-portfolio[b-ol14b9w6ip] {
+    font-weight: 600;
+}
+
+.label-projeto[b-ol14b9w6ip] {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+.container-eco-microsoft img[b-ol14b9w6ip] ,
+.container-html-css img[b-ol14b9w6ip] {
+    width:20px ;
+    height: 20px;
+     
+}
+
+.container-github img[b-ol14b9w6ip]{
+    filter:invert(1);
+    width:20px;
+    height:20px;
+}
+
+.container-linkedin img[b-ol14b9w6ip] {
+    width: 20px;
+    height: 20px;
+}

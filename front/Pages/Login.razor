@@ -1,0 +1,89 @@
+﻿@page "/login"
+@using front.Layout;
+@using front.DTOs;
+@inject front.StateContainers.UsuarioStateContainer estadoUsuario;
+@inject front.Services.LoginService loginService;
+@inject NavigationManager navigationManager;
+@layout LoginLayout;
+
+<div class="card-principal">
+
+    @*Substitui o form do HTML, vantagem dele para o hrml é que ele retem o clique e so deixa avançar via OnValidSubmit*@
+    <EditForm class="form" Model="@loginDTO" OnValidSubmit="BotaoLogin">
+
+        @*Le as anotações de validação que coloquei na DTO,sem ele o blazor n sabe as regras checadas*@
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+
+        @*Exibe uma lista de erros encontrado no formulario,tudo como uma lista*@
+        <ValidationSummary></ValidationSummary>
+
+        <div class="container-email">
+            <label class="label-email">
+                Email
+            </label>
+
+                @* InputText do blazor, a diferença dele é que el usa funções blazor e é otimizado pro C#(como o @bindValue)*@
+                <InputText id ="email" class="form-email" @bind-Value="loginDTO.Email"></InputText>
+
+        </div>
+        <div class="container-senha">
+            <label class="label-senha">
+                Senha
+            </label>
+        
+                <InputText id="senha"  type ="password" class="form-senha" @bind-Value="loginDTO.Senha"></InputText>
+        </div>
+
+
+            <div class="container-checkbox">
+                @*Mesma coisa do inputText*@
+                <InputCheckbox @bind-Value="loginDTO.LembrarDeMim">
+       
+                </InputCheckbox>
+                <label onclick="@MudarEstadoCheck">Lembrar de mim</label>
+            </div>
+           <button class="botao-submit" type="submit">Entrar</button>
+
+
+    </EditForm>
+</div>
+ 
+@if (!string.IsNullOrEmpty(aviso))
+{
+    <div class="mensagem-aviso">
+        @aviso
+    </div>   
+}
+
+@code {
+
+
+    private LoginDTO loginDTO = new LoginDTO();
+
+    public string aviso = string.Empty;
+
+    private void MudarEstadoCheck()
+    {
+        loginDTO.LembrarDeMim = !loginDTO.LembrarDeMim;
+    }
+
+    async Task BotaoLogin()
+    {
+      
+            var resposta =  await loginService.FazerLogin(loginDTO);    
+            if (resposta == null)
+            {
+                aviso = "Valor inválido, Tente novamente!";
+                return;
+            }
+            estadoUsuario.SalvarUsuario(resposta);
+            ConcluirCadastro();
+       
+    }
+
+    private void ConcluirCadastro()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
+}

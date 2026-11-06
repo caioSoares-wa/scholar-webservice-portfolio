@@ -1,0 +1,101 @@
+﻿@inject StateContainers.UsuarioStateContainer estadoUsuario;
+@implements IDisposable ;
+@inject NavigationManager navigationManager;
+
+<header class="cabecalho">
+
+    <div class="cabecalho-principal">
+        <a class="">
+            imagem logo escola
+        </a>
+
+        <div class="usuario-info">
+            
+            <label>
+                cargo usuario
+            </label>
+
+            <a>
+                icone notificação
+            </a>
+
+            <div class="menu-usuario">
+                <a>
+                    imagem usuário
+                </a>
+
+
+                <div class="container-icone-dropdown">
+
+
+
+                    <a @onclick="AlternarDropdown">
+                        iconedropdown
+                    </a>
+                    @if (exibirDropdown)
+                    {
+                        <div class="dropdown-menu-usuario">
+                            <div class="dropdown-header">
+                                <strong>Meu Perfil</strong>
+                                @if (estadoUsuario.Usuario?.Cargo?.ToLower() == "professor")
+                                {
+                                    <span>Meus Alunos</span>
+                                    <span>Minha Turma</span>
+                                }
+                                else
+                                {
+                                    <span>Minha Turma</span>   
+                                }
+
+                            </div>
+                            <div class="dropdown-divider"></div>
+
+                            <button class="botao-sair-dropdown" @onclick="FazerLogout">Sair</button>
+                        </div>
+                    }
+                </div>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cabecalho-secundario">
+
+
+    </div>
+
+</header>
+
+
+@code {
+
+    private bool exibirDropdown = false;
+
+
+
+
+    private void AlternarDropdown()
+    {
+        exibirDropdown = !exibirDropdown;
+    }
+
+    private async Task FazerLogout()
+    {
+        await estadoUsuario.FazerLogout();
+        navigationManager.NavigateTo("/login");
+    }
+
+    protected override void OnInitialized()
+    {
+        estadoUsuario.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        estadoUsuario.OnChange -= StateHasChanged;
+    }
+
+}

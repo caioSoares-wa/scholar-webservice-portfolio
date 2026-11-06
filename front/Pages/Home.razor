@@ -1,0 +1,82 @@
+﻿@page "/"
+@using front.Components
+@using DTOs
+@inject front.Services.ResumoHomeService resumoHomeService;
+@inject NavigationManager navigationManager;
+@inject front.StateContainers.UsuarioStateContainer estadoUsuario;
+
+
+<div class="container-info">
+    @if (estadoUsuario.Usuario?.Cargo?.ToLower() == "professor")
+    {
+        <div class="card-alunos-professor">
+            <div class="container-alunos-img">
+                <a>icone usuario</a>
+                <label>Alunos</label>
+            </div>
+            <label>@infoProfessor.TotalAlunos</label>
+        </div>
+
+        <div class="card-turmas-professor">
+
+            <div class="container-turmas-img">
+                <a>icone turmas</a>
+                <label>Turmas</label>
+            </div>
+            <label>@infoProfessor.TotalTurmas? </label>
+        </div>
+        
+        <div class="card-pendencias-professor">
+
+            <div class="container-pendencias-img">
+                <a>icone pendencias</a>
+                <label>Pendências</label>
+            </div>
+            <label>@infoProfessor.Pendencias</label>
+        </div>
+    }
+    else if (estadoUsuario.Usuario?.Cargo?.ToLower() == "aluno")
+    {
+        
+    }
+
+</div>
+
+
+@code {
+
+    private InfoAlunoDTO? infoAluno;
+    private InfoProfessorDTO? infoProfessor;
+
+
+    private async Task BuscarInfo(int id)
+    {
+        if (estadoUsuario.Usuario.Cargo == "professor")
+        {
+            infoProfessor =  await resumoHomeService.BuscarInformacoesProfessor(id);
+        }
+
+        if (estadoUsuario.Usuario.Cargo == "aluno")
+        {
+            infoAluno = await resumoHomeService.BuscarInformacoesAluno(id);
+        }
+
+        return;
+    }
+
+    //na incialização da pagina, se o usuario não estiver logado, é mandado para o login
+    protected override async Task OnInitializedAsync()
+    {
+        if (estadoUsuario.Usuario == null)
+        {   
+            navigationManager.NavigateTo("/login");
+            return;
+        }
+
+
+         await BuscarInfo(estadoUsuario.Usuario.Id);
+    }
+
+
+
+}

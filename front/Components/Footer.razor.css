@@ -1,0 +1,113 @@
+.footer-principal {
+    margin-top: auto;
+    padding: 16px 24px;
+    border-top: 1px solid var(--cinza-borda);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--cinza-texto);
+}
+
+.dev-label {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+/* as duas colunas, juntinhas no meio */
+.info-geral {
+    width: fit-content;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* coluna esquerda */
+.container-tec-usadas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label-tec-usadas {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.container-eco-microsoft,
+.container-html-css {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-html-css {
+    padding-top: 8px;
+    border-top: 1px solid var(--cinza-borda);
+}
+
+
+.container-icones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.container-github,
+.container-linkedin {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .container-github label,
+    .container-linkedin label {
+        font-weight: 600;
+        color: var(--texto);
+        cursor: pointer;
+    }
+
+.footer-principal a {
+    color: var(--texto);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .footer-principal a:hover {
+        color: var(--vermelho);
+    }
+
+.link-portfolio {
+    font-weight: 600;
+}
+
+.label-projeto {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+.container-eco-microsoft img ,
+.container-html-css img {
+    width:20px ;
+    height: 20px;
+     
+}
+
+.container-github img{
+    filter:invert(1);
+    width:20px;
+    height:20px;
+}
+
+.container-linkedin img {
+    width: 20px;
+    height: 20px;
+}

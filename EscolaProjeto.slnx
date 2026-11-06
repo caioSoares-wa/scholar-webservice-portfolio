@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Presentation/">
+    <Project Path="api/api.csproj" />
+    <Project Path="front/front.csproj" />
+  </Folder>
+  <Project Path="Application/Application.csproj" />
+  <Project Path="Domain/Domain.csproj" />
+  <Project Path="Infra/Infra.csproj" />
+</Solution>
