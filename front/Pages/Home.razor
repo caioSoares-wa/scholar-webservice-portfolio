@@ -7,56 +7,113 @@
 
 
 <div class="container-info">
-    @if (estadoUsuario.Usuario?.Cargo?.ToLower() == "professor")
+    @if (carregando)
     {
-        <div class="card-alunos-professor">
-            <div class="container-alunos-img">
-                <a>icone usuario</a>
-                <label>Alunos</label>
-            </div>
-            <label>@infoProfessor.TotalAlunos</label>
-        </div>
-
-        <div class="card-turmas-professor">
-
-            <div class="container-turmas-img">
-                <a>icone turmas</a>
-                <label>Turmas</label>
-            </div>
-            <label>@infoProfessor.TotalTurmas? </label>
-        </div>
-        
-        <div class="card-pendencias-professor">
-
-            <div class="container-pendencias-img">
-                <a>icone pendencias</a>
-                <label>Pendências</label>
-            </div>
-            <label>@infoProfessor.Pendencias</label>
-        </div>
+        <label class="carregando">Carregando...</label>
     }
-    else if (estadoUsuario.Usuario?.Cargo?.ToLower() == "aluno")
+    else
     {
         
-    }
+        @if (estadoUsuario.Usuario?.Cargo?.ToLower() == "professor")
+        {
+            <div class="card-alunos-professor">
+                <div class="container-alunos-img">
+                    <a>icone usuario</a>
+                    <label>Alunos</label>
+                </div>
+                <label>@infoProfessor?.TotalAlunos</label>
+            </div>
 
+            <div class="card-turmas-professor">
+
+                <div class="container-turmas-img">
+                    <a>icone turmas</a>
+                    <label>Turmas</label>
+                </div>
+                <label>@infoProfessor?.TotalTurmas </label>
+            </div>
+        
+            <div class="card-pendencias-professor">
+
+                <div class="container-pendencias-img">
+                    <a>icone pendencias</a>
+                    <label>Pendências</label>
+                </div>
+                @if (infoProfessor?.Pendencias == null)
+                {
+                    <label>Nenhuma pendência.</label>
+                }
+                else
+                {
+                    @foreach (var i in infoProfessor?.Pendencias)
+                    {
+                       <div class="container-pendencias-individual">
+                           <label>@i.Descricao</label>
+                       </div>
+                    }    
+                }
+            </div>
+        }
+        else if (estadoUsuario.Usuario?.Cargo?.ToLower() == "aluno")
+        {
+            <div class="container-aluno">
+
+                <div class="card-aluno-info">
+                    <a>icone usuario</a>
+                    <label>@infoAluno?.Nome</label>
+                </div>
+
+                <div class="presenca">
+                    <a>icone calendario</a>
+                    <label>porcentagem de presença</label>
+                </div>
+                <div class="dias-proxima-prova">
+                    <label>@infoAluno?.DiasAteAProximaProva</label>
+                </div>
+
+                <div class="media-geral-aluno">
+                    <a>icone estudante</a>
+                    <div class="">
+                        <label>media do aluno atual</label>
+                        <a>icone ? pequeno pra informar q a media é das notas lançadas até agora</a>
+
+                    </div>
+                </div>
+
+                <div class="atividade-pendente">
+                    <a>icone atividade</a>
+                        @if (infoAluno?.AtividadesPendentes?.Count != 0)
+                        {
+                            <label>@infoAluno?.AtividadesPendentes?.Count</label>
+                        }
+                        else
+                        {
+                            <label>Nenhuma atividade pendente, parabéns!</label>
+                            
+                        }    
+                </div>
+            </div>
+        }
+    }
 </div>
 
 
-@code {
 
+
+@code {
+    private bool carregando = true; 
     private InfoAlunoDTO? infoAluno;
     private InfoProfessorDTO? infoProfessor;
 
 
     private async Task BuscarInfo(int id)
     {
-        if (estadoUsuario.Usuario.Cargo == "professor")
+        if (estadoUsuario.Usuario.Cargo.ToLower() == "professor")
         {
             infoProfessor =  await resumoHomeService.BuscarInformacoesProfessor(id);
         }
 
-        if (estadoUsuario.Usuario.Cargo == "aluno")
+        if (estadoUsuario.Usuario.Cargo.ToLower() == "aluno")
         {
             infoAluno = await resumoHomeService.BuscarInformacoesAluno(id);
         }
@@ -74,7 +131,10 @@
         }
 
 
-         await BuscarInfo(estadoUsuario.Usuario.Id);
+        await BuscarInfo(estadoUsuario.Usuario.Id);
+
+
+        carregando = false;
     }
 
 

@@ -1,0 +1,93 @@
+.container-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px;
+}
+
+.carregando {
+    color: var(--cinza-texto);
+    font-size: 14px;
+}
+
+/* cards do professor */
+.card-alunos-professor,
+.card-turmas-professor,
+.card-pendencias-professor {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: var(--superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 7px;
+}
+
+/* linha icone + titulo */
+.container-alunos-img,
+.container-turmas-img,
+.container-pendencias-img {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--cinza-texto);
+}
+
+/* o numero grande (ultimo label do card) */
+.card-alunos-professor > label:last-child,
+.card-turmas-professor > label:last-child,
+.card-pendencias-professor > label:last-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+/* pendencias em destaque */
+.card-pendencias-professor > label:last-child {
+    color: var(--vermelho);
+}
+
+/* area do aluno */
+.container-aluno {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card-aluno-info,
+.presenca,
+.media-geral-aluno,
+.atividade-pendente {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: var(--superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 12px;
+    color: var(--texto);
+}
+
+    /* o card da media tem icone + bloco (label + ?) */
+    .media-geral-aluno > div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .media-geral-aluno label,
+    .presenca label {
+        font-size: 14px;
+        color: var(--cinza-texto);
+    }
+
+    .card-aluno-info label {
+        font-weight: 600;
+    }
+
+    .atividade-pendente label {
+        font-weight: 600;
+    }

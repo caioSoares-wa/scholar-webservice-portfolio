@@ -117,3 +117,36 @@
 .cabecalho-secundario:empty[b-xzcizi1egf] {
     display: none;
 }
+
+.img-notificacao[b-xzcizi1egf] {
+    width: 22px;
+    height: 22px;
+}
+
+
+.img-dropdown[b-xzcizi1egf] {
+    width: 22px;
+    height: 22px;
+}
+
+.aba-ativa[b-xzcizi1egf] {
+    color: var(--vermelho);
+}
+
+
+.container-notificacao[b-xzcizi1egf]{
+    position:relative;
+    display: inline-block;
+}
+
+
+.badge-contador[b-xzcizi1egf] {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #ef4444;
+    font-size: 0.6rem;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 100px;
+}

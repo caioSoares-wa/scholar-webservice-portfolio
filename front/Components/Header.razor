@@ -12,32 +12,43 @@
         <div class="usuario-info">
             
             <label>
-                cargo usuario
+                @estadoUsuario?.Usuario?.Cargo
             </label>
 
-            <a>
-                icone notificação
-            </a>
+            @if (temNotificacao)
+            {
+                <div class="container-notificacao">
+                    <i class="fa-solid fa-bell icone-sino-ativo"></i>
+                    <span class="badge-contador">3</span>
+                </div>
+
+            }
+            else
+            {
+                <div class="container-notificacao">
+                    <i class="fa-regular fa-bell icone-sino-inativo"></i>
+                </div>
+            }
+          
+
+        
+
 
             <div class="menu-usuario">
+
+                <div class="container-icone-dropdown">
                 <a>
                     imagem usuário
                 </a>
-
-
-                <div class="container-icone-dropdown">
-
-
-
                     <a @onclick="AlternarDropdown">
-                        iconedropdown
+                        <i class="fa-solid fa-caret-down img-dropdown @(exibirDropdown ? "aba-ativa" : "")"></i>
                     </a>
                     @if (exibirDropdown)
                     {
                         <div class="dropdown-menu-usuario">
                             <div class="dropdown-header">
                                 <strong>Meu Perfil</strong>
-                                @if (estadoUsuario.Usuario?.Cargo?.ToLower() == "professor")
+                                @if (estadoUsuario?.Usuario?.Cargo?.ToLower() == "professor")
                                 {
                                     <span>Meus Alunos</span>
                                     <span>Minha Turma</span>
@@ -73,6 +84,9 @@
 @code {
 
     private bool exibirDropdown = false;
+    private string abaAtiva = "inativa";
+
+    private bool temNotificacao = true;
 
 
 
@@ -97,5 +111,6 @@
     {
         estadoUsuario.OnChange -= StateHasChanged;
     }
+
 
 }

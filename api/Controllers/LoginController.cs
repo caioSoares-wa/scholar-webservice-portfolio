@@ -20,7 +20,7 @@ namespace api.Controllers
             var UsuarioDTO = new UsuarioDTO
             {
                 Id = 1,
-                Cargo = "Professor",
+                Cargo = "Aluno",
                 Nome = "Caio"
             };
 

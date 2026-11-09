@@ -232,6 +232,39 @@
 .cabecalho-secundario:empty[b-xzcizi1egf] {
     display: none;
 }
+
+.img-notificacao[b-xzcizi1egf] {
+    width: 22px;
+    height: 22px;
+}
+
+
+.img-dropdown[b-xzcizi1egf] {
+    width: 22px;
+    height: 22px;
+}
+
+.aba-ativa[b-xzcizi1egf] {
+    color: var(--vermelho);
+}
+
+
+.container-notificacao[b-xzcizi1egf]{
+    position:relative;
+    display: inline-block;
+}
+
+
+.badge-contador[b-xzcizi1egf] {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #ef4444;
+    font-size: 0.6rem;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 100px;
+}
 /* /Layout/LoginLayout.razor.rz.scp.css */
 /* CSS for LoginLayout component */
 .pagina-login[b-s832tb3luz] {
@@ -321,6 +354,100 @@ main[b-sksv863mt7] {
         padding-right: 1.5rem !important;
     }
 }
+/* /Pages/Home.razor.rz.scp.css */
+.container-info[b-530mngw3qx] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px;
+}
+
+.carregando[b-530mngw3qx] {
+    color: var(--cinza-texto);
+    font-size: 14px;
+}
+
+/* cards do professor */
+.card-alunos-professor[b-530mngw3qx],
+.card-turmas-professor[b-530mngw3qx],
+.card-pendencias-professor[b-530mngw3qx] {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: var(--superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 7px;
+}
+
+/* linha icone + titulo */
+.container-alunos-img[b-530mngw3qx],
+.container-turmas-img[b-530mngw3qx],
+.container-pendencias-img[b-530mngw3qx] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--cinza-texto);
+}
+
+/* o numero grande (ultimo label do card) */
+.card-alunos-professor > label:last-child[b-530mngw3qx],
+.card-turmas-professor > label:last-child[b-530mngw3qx],
+.card-pendencias-professor > label:last-child[b-530mngw3qx] {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+/* pendencias em destaque */
+.card-pendencias-professor > label:last-child[b-530mngw3qx] {
+    color: var(--vermelho);
+}
+
+/* area do aluno */
+.container-aluno[b-530mngw3qx] {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card-aluno-info[b-530mngw3qx],
+.presenca[b-530mngw3qx],
+.media-geral-aluno[b-530mngw3qx],
+.atividade-pendente[b-530mngw3qx] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: var(--superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 12px;
+    color: var(--texto);
+}
+
+    /* o card da media tem icone + bloco (label + ?) */
+    .media-geral-aluno > div[b-530mngw3qx] {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .media-geral-aluno label[b-530mngw3qx],
+    .presenca label[b-530mngw3qx] {
+        font-size: 14px;
+        color: var(--cinza-texto);
+    }
+
+    .card-aluno-info label[b-530mngw3qx] {
+        font-weight: 600;
+    }
+
+    .atividade-pendente label[b-530mngw3qx] {
+        font-weight: 600;
+    }
 /* /Pages/Login.razor.rz.scp.css */
 .card-principal[b-xqazf780xr] {
     width: 100%;

@@ -8,6 +8,9 @@ C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\api.dll
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\api.pdb
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Scalar.AspNetCore.dll
+C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Domain.dll
+C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Domain.pdb
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,6 +19,7 @@ C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.Assemb
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.sourcelink.json
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -31,4 +35,3 @@ C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\refint\api
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.pdb
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\api.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\obj\Debug\net10.0\ref\api.dll
-C:\Users\Usuario\Desktop\Projetos\EscolaProjeto\api\bin\Debug\net10.0\Scalar.AspNetCore.dll
